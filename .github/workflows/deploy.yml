@@ -20,7 +20,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 18
@@ -31,7 +31,7 @@ jobs:
       - name: Build project
         run: npm run build --prefix client
 
-      - name: Upload build artifacts
+      - name: Upload build output
         uses: actions/upload-pages-artifact@v3
         with:
           path: client/dist
@@ -46,4 +46,5 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
 
